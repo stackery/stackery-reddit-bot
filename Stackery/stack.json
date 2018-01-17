@@ -1,0 +1,54 @@
+{
+  "nodes": [
+    {
+      "id": "6a544e8a",
+      "type": "function",
+      "x": 400,
+      "y": 275,
+      "name": "bot",
+      "outputs": 1,
+      "memorySize": 3008,
+      "timeout": 60,
+      "runtime": "nodejs",
+      "location": "inline",
+      "envVars": {
+        "CLIENT_ID": "tmpid",
+        "CLIENT_SECRET": "tmpsecret",
+        "REDDIT_USER": "tmpbotname",
+        "REDDIT_PASS": "tmppassword",
+        "TOPIC_NAME": "tmptopicname"
+      },
+      "entryPoint": "",
+      "wires": [
+        [
+          "e3b960af"
+        ]
+      ]
+    },
+    {
+      "id": "ed15122",
+      "type": "timer",
+      "x": 190,
+      "y": 275,
+      "name": "KeepAlive",
+      "timerType": "interval",
+      "intervalCount": 1,
+      "intervalUnit": "days",
+      "wires": [
+        [
+          "6a544e8a"
+        ]
+      ]
+    },
+    {
+      "id": "e3b960af",
+      "type": "topic",
+      "x": 710,
+      "y": 275,
+      "name": "stackery-81155227268130-topcooking",
+      "wires": [
+        []
+      ]
+    }
+  ]
+}
