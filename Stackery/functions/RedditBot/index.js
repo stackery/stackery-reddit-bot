@@ -29,7 +29,7 @@ function logic (post) {
 }
 
 module.exports = function handler (event, context, callback) {
-  console.log('Bot received ping event.');
+  console.log(event);
 
   return Promise.all(subreddits.map(s => r.getSubreddit(s).getHot()
     .then((posts) => {

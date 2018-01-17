@@ -3,20 +3,19 @@
     {
       "id": "6a544e8a",
       "type": "function",
-      "x": 400,
+      "x": 440,
       "y": 275,
-      "name": "bot",
+      "name": "RedditBot",
       "outputs": 1,
       "memorySize": 3008,
       "timeout": 60,
       "runtime": "nodejs",
       "location": "inline",
       "envVars": {
-        "CLIENT_ID": "tmpid",
-        "CLIENT_SECRET": "tmpsecret",
-        "REDDIT_USER": "tmpbotname",
-        "REDDIT_PASS": "tmppassword",
-        "TOPIC_NAME": "tmptopicname"
+        "CLIENT_ID": "${config.clientId}",
+        "CLIENT_SECRET": "${config.clientSecret}",
+        "REDDIT_USER": "${config.username}",
+        "REDDIT_PASS": "${config.userpass}"
       },
       "entryPoint": "",
       "wires": [
@@ -30,7 +29,7 @@
       "type": "timer",
       "x": 190,
       "y": 275,
-      "name": "KeepAlive",
+      "name": "Timer",
       "timerType": "interval",
       "intervalCount": 1,
       "intervalUnit": "days",
@@ -45,7 +44,7 @@
       "type": "topic",
       "x": 710,
       "y": 275,
-      "name": "stackery-81155227268130-topcooking",
+      "name": "HotCookingPosts",
       "wires": [
         []
       ]
